@@ -3,15 +3,19 @@
  This object should be passed in not created by using the keyword “new”, such as new TestHarness(). In other words,
  the TestHarness object should be the same one that creates the Testlets instead of being a new object.
   */
+
+import java.awt.*;
+
 /**
  *
  * @version 1.0
- * @author Mio Diaz,
+ * @author Mio Diaz, Cody Walker
+ * @version 1.0
  */
 public class RectangleTestlet implements TestletIF {
-    // The Rectangle class has a method int getArea(int w, int h),
-
-    int getArea(int w, int h){
-        return w * h;
+  Rectangle r = new Rectangle();
+    @Override
+    public void runTest() {
+        r.getArea(5,5);
     }
 }

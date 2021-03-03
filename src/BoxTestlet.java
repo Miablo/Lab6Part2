@@ -1,13 +1,14 @@
+import javax.swing.*;
+
 /**
  *
  * @version 1.0
- * @author Mio Diaz,
+ * @author Mio Diaz, Cody Walker
  */
 public class BoxTestlet implements TestletIF{
-    //  Box class has a method double
-    //getVolume(double l, double w, double h).
-
-    double getVolume(double l, double w, double h) {
-        return l * w * h;
+    Box b = new Box();
+    @Override
+    public void runTest() {
+        b.getVolume(2,2,2);
     }
 }
