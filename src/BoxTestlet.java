@@ -7,7 +7,14 @@
  */
 public class BoxTestlet implements Testlet {
     Box b = new Box();
-
+    /*
+      Boundary Value Analysis for the two classes
+      Minimum - 1
+      Min+ - 2
+      Nom - 5
+      Max- 9
+      Max - 10
+       */
     @Override
     public void runTest(MyJUnit myJU) {
         if(myJU.checkBounds(2) && myJU.checkBounds(2) && myJU.checkBounds(2)) {

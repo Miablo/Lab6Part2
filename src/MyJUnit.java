@@ -6,24 +6,20 @@
  * @author Mio Diaz, Cody Walker
  */
 public class MyJUnit extends TestHarness {
-    /*
-    Boundary Value Analysis for the two classes
-    Minimum
-    Min+
-    Nom
-    Max-
-    Max
-     */
-
-    /*
-    (5 pts) Develop a JUnit like test tool MyJUnit that extends class TestHarness.
-
-    Assume all input variables should range between 1 and 10.
-    Perform boundary value analysis for the two classes through the two testlets.
+    /**
+     * checkBounds
+     * @param b integer from testlet class
+     * @return true or false if within bounds
      */
     public boolean checkBounds(int b){
         return b >= 1 && b <= 10;
     }
+
+    /**
+     *
+     * @param b double from testlet class
+     * @return true or false if within bounds
+     */
     public boolean checkBounds(double b){
         return b >= 1 && b <= 10;
     }

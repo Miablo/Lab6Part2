@@ -6,7 +6,7 @@
 
 /**
  * RectangleTestlet implements Testlet used to test
- * Rectanlge class
+ * Rectangle class
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker

@@ -1,47 +1,31 @@
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 /**
+ * Main class
+ * program driver - calls main method
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
+ *
+ * @see java.lang.reflect.Method
+ * @see java.lang.reflect.InvocationTargetException
  */
 public class Main {
-    /*
-    The problem is how to access the TestHarness object from your Testlet object.
-    A good solution is to pass the TestHarness object to the Testlet's method. In that case,
-    you can utilize the TestHarness object to do all sorts of comparison that are available in the TestHarness object.
-     */
-
     /**
      * Main method
      *
      * @param args Name of classes object
      */
     public static void main(String[] args) {
+        // JUnit object
         MyJUnit myJU = new MyJUnit();
         try {
+            // Loop through arguments passed through CLI
             for (String arg : args) {
-                // Now cast the object to a Testlet class.
-                // With the Testlet object, you can run its method.
-               // Object o = Class.forName(arg).getDeclaredMethod("runTest").invoke(myJU);
                 Object o = Class.forName(arg).getConstructor().newInstance();
-               Method m = o.getClass().getDeclaredMethod("runTest", MyJUnit.class);
-               m.invoke(o, myJU);
-
-                // To print out objects created for test - can be removed //
-               // System.out.println("Object created for class:"
-                  //      + o.getClass().getName());
-
-              /*  if(o.getClass().getName() == "BoxTestlet"){
-                    BoxTestlet box = new BoxTestlet(); //just for test right now
-                    box.runTest(myJU);
-                }else if (o.getClass().getName() == "RectangleTestlet"){
-                    RectangleTestlet rec = new RectangleTestlet();
-                    rec.runTest(myJU);
-                }*/
+                Method m = o.getClass().getDeclaredMethod("runTest", MyJUnit.class);
+                m.invoke(o, myJU);
             }
-           // BoxTestlet box = new BoxTestlet(); //just for test right now
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                 | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();

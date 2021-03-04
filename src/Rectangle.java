@@ -1,12 +1,10 @@
 /**
+ * Rectangle class returns area
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
-
 public class Rectangle {
-    // The Rectangle class has a method int getArea(int w, int h),
-
     /**
      * gets area of Rectangle
      * @param w width of object Rectangle
