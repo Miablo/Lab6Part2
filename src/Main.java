@@ -27,8 +27,15 @@ public class Main {
                 // To print out objects created for test - can be removed //
                 System.out.println("Object created for class:"
                         + o.getClass().getName());
+                if(o.getClass().getName() == "BoxTestlet"){
+                    BoxTestlet box = new BoxTestlet(); //just for test right now
+                    box.runTest(myJU);
+                }else if (o.getClass().getName() == "RectangleTestlet"){
+                    RectangleTestlet rec = new RectangleTestlet();
+                    rec.runTest(myJU);
+                }
             }
-            //BoxTestlet box = new BoxTestlet(); //just for test right now
+            BoxTestlet box = new BoxTestlet(); //just for test right now
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
                 | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
