@@ -1,11 +1,11 @@
 /**
- * BoxTestlet implements TestletIF
+ * BoxTestlet implements Testlet
  * used to test Box class
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
-public class BoxTestlet implements TestletIF{
+public class BoxTestlet implements Testlet {
     Box b = new Box();
 
     @Override

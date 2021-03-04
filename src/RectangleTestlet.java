@@ -4,16 +4,14 @@
  the TestHarness object should be the same one that creates the Testlets instead of being a new object.
   */
 
-import java.awt.*;
-
 /**
- * RectangleTestlet implements TestletIF used to test
+ * RectangleTestlet implements Testlet used to test
  * Rectanlge class
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
-public class RectangleTestlet implements TestletIF {
+public class RectangleTestlet implements Testlet {
   Rectangle r = new Rectangle();
 
     @Override

@@ -1,4 +1,5 @@
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  *
@@ -23,23 +24,29 @@ public class Main {
             for (String arg : args) {
                 // Now cast the object to a Testlet class.
                 // With the Testlet object, you can run its method.
+               // Object o = Class.forName(arg).getDeclaredMethod("runTest").invoke(myJU);
                 Object o = Class.forName(arg).getConstructor().newInstance();
+               Method m = o.getClass().getDeclaredMethod("runTest", MyJUnit.class);
+               m.invoke(o, myJU);
+
                 // To print out objects created for test - can be removed //
-                System.out.println("Object created for class:"
-                        + o.getClass().getName());
-                if(o.getClass().getName() == "BoxTestlet"){
+               // System.out.println("Object created for class:"
+                  //      + o.getClass().getName());
+
+              /*  if(o.getClass().getName() == "BoxTestlet"){
                     BoxTestlet box = new BoxTestlet(); //just for test right now
                     box.runTest(myJU);
                 }else if (o.getClass().getName() == "RectangleTestlet"){
                     RectangleTestlet rec = new RectangleTestlet();
                     rec.runTest(myJU);
-                }
+                }*/
             }
-            BoxTestlet box = new BoxTestlet(); //just for test right now
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-                | NoSuchMethodException | InvocationTargetException e) {
+           // BoxTestlet box = new BoxTestlet(); //just for test right now
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
+                | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
+
 }
 
