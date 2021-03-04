@@ -1,4 +1,6 @@
 /**
+ * BoxTestlet implements TestletIF
+ * used to test Box class
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker

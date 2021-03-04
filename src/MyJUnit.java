@@ -1,9 +1,19 @@
 /**
+ * MyJUnit extends TestHarness
+ * used to run analysis on testlet classes
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
 public class MyJUnit extends TestHarness {
+    /*
+    Boundary Value Analysis for the two classes
+    Minimum
+    Min+
+    Nom
+    Max-
+    Max
+     */
 
     /*
     (5 pts) Develop a JUnit like test tool MyJUnit that extends class TestHarness.

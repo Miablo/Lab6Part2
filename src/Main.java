@@ -11,6 +11,12 @@ public class Main {
     A good solution is to pass the TestHarness object to the Testlet's method. In that case,
     you can utilize the TestHarness object to do all sorts of comparison that are available in the TestHarness object.
      */
+
+    /**
+     * Main method
+     *
+     * @param args Name of classes object
+     */
     public static void main(String[] args) {
         MyJUnit myJU = new MyJUnit();
         try {

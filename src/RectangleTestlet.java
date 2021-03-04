@@ -7,6 +7,8 @@
 import java.awt.*;
 
 /**
+ * RectangleTestlet implements TestletIF used to test
+ * Rectanlge class
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker

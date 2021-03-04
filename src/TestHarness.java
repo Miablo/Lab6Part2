@@ -1,14 +1,11 @@
 /**
+ * TestHarness used to compare
+ * primitive data type values
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
 public class TestHarness {
-
-    /*
-      In TestHarness, there are two overloading methods boolean checkEqual(int actual, int expected)
-     and boolean checkEqual(double actual, double expected) for comparing primitive data type values.
-     */
 
     /**
      * overload function to check if it is expected value or not for int
