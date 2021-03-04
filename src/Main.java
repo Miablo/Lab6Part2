@@ -1,13 +1,11 @@
+import java.lang.reflect.InvocationTargetException;
+
 /**
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
  */
 public class Main {
-
-   /* The MyJUnit can accept multiple testlet class names, such as “java MyJUnit RectangleTestlet BoxTestlet”,
-    to test testlet classes in order. Most importantly, the MyJUnit tool must be able to handle new testlet
-    classes in the future without a need of code change.*/
 
     /*
     The problem is how to access the TestHarness object from your Testlet object.
@@ -21,17 +19,17 @@ public class Main {
         try {
            // c = Class.forName(args[0]);
             for (String arg : args) {
-                Object o = Class.forName(arg).newInstance();
+                // Now cast the object to a Testlet class.
+                // With the Testlet object, you can run its method.
+                Object o = Class.forName(arg).getConstructor().newInstance();
                 // To print out objects created for test - can be removed //
                 System.out.println("Object created for class:"
                         + o.getClass().getName());
             }
             //BoxTestlet box = new BoxTestlet(); //just for test right now
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        // Now cast the object to a Testlet class.
-        // With the Testlet object, you can run its method.
     }
 }
 
