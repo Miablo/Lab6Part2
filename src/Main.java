@@ -6,18 +6,14 @@ import java.lang.reflect.InvocationTargetException;
  * @author Mio Diaz, Cody Walker
  */
 public class Main {
-
     /*
     The problem is how to access the TestHarness object from your Testlet object.
     A good solution is to pass the TestHarness object to the Testlet's method. In that case,
     you can utilize the TestHarness object to do all sorts of comparison that are available in the TestHarness object.
      */
-
     public static void main(String[] args) {
-       // Class c = null;  // The args[0] would be “pkg.RectangleTestlet”
         MyJUnit myJU = new MyJUnit();
         try {
-           // c = Class.forName(args[0]);
             for (String arg : args) {
                 // Now cast the object to a Testlet class.
                 // With the Testlet object, you can run its method.
@@ -27,7 +23,8 @@ public class Main {
                         + o.getClass().getName());
             }
             //BoxTestlet box = new BoxTestlet(); //just for test right now
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+                | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
     }
