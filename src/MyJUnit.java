@@ -1,7 +1,7 @@
 /**
  *
  * @version 1.0
- * @author Mio Diaz,
+ * @author Mio Diaz, Cody Walker
  */
 public class MyJUnit extends TestHarness {
 
@@ -11,6 +11,13 @@ public class MyJUnit extends TestHarness {
     Assume all input variables should range between 1 and 10.
     Perform boundary value analysis for the two classes through the two testlets.
      */
-
+    public boolean checkBounds(int b){
+        if(b >= 1 && b <= 10){return true;}
+        else{return false;}
+    }
+    public boolean checkBounds(double b){
+        if(b >= 1 && b <= 10){return true;}
+        else{return false;}
+    }
 
 }

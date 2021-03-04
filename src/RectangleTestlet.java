@@ -10,12 +10,20 @@ import java.awt.*;
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
- * @version 1.0
  */
 public class RectangleTestlet implements TestletIF {
   Rectangle r = new Rectangle();
+
     @Override
-    public void runTest() {
-        r.getArea(5,5);
+    public void runTest(MyJUnit myJU) {
+        if(myJU.checkBounds(5) && myJU.checkBounds(5)) {
+            if(myJU.checkEqual(r.getArea(5, 5), 25)){
+                System.out.println("Width 5 and Height 5 passed with 25");
+            }else{
+                System.out.println("Width 5 and Height 5 failed with " + r.getArea(5,5) + "expected 25.");
+            }
+        }else{
+            System.out.println("Out of range length and height needs to be between 1 - 10.");
+        }
     }
 }

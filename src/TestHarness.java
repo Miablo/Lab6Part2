@@ -2,7 +2,6 @@
  *
  * @version 1.0
  * @author Mio Diaz, Cody Walker
- * @version 1.0
  */
 public class TestHarness {
 

@@ -1,7 +1,7 @@
 /**
  *
  * @version 1.0
- * @author Mio Diaz,
+ * @author Mio Diaz, Cody Walker
  */
 public class Main {
 
@@ -16,8 +16,16 @@ public class Main {
      */
 
     public static void main(String[] args) {
-       // Class c = Class.forName(args[0]);  // The args[0] would be “pkg.RectangleTestlet”
-       // Object o = c.newInstance();
+        Class c = null;  // The args[0] would be “pkg.RectangleTestlet”
+        MyJUnit myJU = new MyJUnit();
+        try {
+            c = Class.forName(args[0]);
+            Object o = c.newInstance();
+            BoxTestlet box = new BoxTestlet(); //just for test right now
+            box.runTest(myJU); //just for test right now
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
         // Now cast the object to a Testlet class.
         // With the Testlet object, you can run its method.
     }
