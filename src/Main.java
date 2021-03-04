@@ -16,13 +16,17 @@ public class Main {
      */
 
     public static void main(String[] args) {
-        Class c = null;  // The args[0] would be “pkg.RectangleTestlet”
+       // Class c = null;  // The args[0] would be “pkg.RectangleTestlet”
         MyJUnit myJU = new MyJUnit();
         try {
-            c = Class.forName(args[0]);
-            Object o = c.newInstance();
-            BoxTestlet box = new BoxTestlet(); //just for test right now
-            box.runTest(myJU); //just for test right now
+           // c = Class.forName(args[0]);
+            for(int i = 0; i < args.length; i++){
+                Object o = Class.forName(args[i]).newInstance();
+                // To print out objects created for test - can be removed //
+                System.out.println("Object created for class:"
+                        + o.getClass().getName());
+            }
+            //BoxTestlet box = new BoxTestlet(); //just for test right now
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }

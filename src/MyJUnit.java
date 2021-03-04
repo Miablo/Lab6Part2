@@ -12,12 +12,10 @@ public class MyJUnit extends TestHarness {
     Perform boundary value analysis for the two classes through the two testlets.
      */
     public boolean checkBounds(int b){
-        if(b >= 1 && b <= 10){return true;}
-        else{return false;}
+        return b >= 1 && b <= 10;
     }
     public boolean checkBounds(double b){
-        if(b >= 1 && b <= 10){return true;}
-        else{return false;}
+        return b >= 1 && b <= 10;
     }
 
 }

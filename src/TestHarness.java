@@ -17,8 +17,7 @@ public class TestHarness {
      * @return  true if both match false otherwise
      */
     boolean checkEqual(int actual, int expected){
-        if (actual == expected){return true;}
-        else{return false;}
+        return actual == expected;
     }
 
     /**
@@ -28,7 +27,6 @@ public class TestHarness {
      * @return  true if both match false otherwise
      */
     boolean checkEqual(double actual, double expected){
-        if (actual == expected){return true;}
-        else{return false;}
+        return actual == expected;
     }
 }
