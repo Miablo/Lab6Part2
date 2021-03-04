@@ -20,8 +20,8 @@ public class Main {
         MyJUnit myJU = new MyJUnit();
         try {
            // c = Class.forName(args[0]);
-            for(int i = 0; i < args.length; i++){
-                Object o = Class.forName(args[i]).newInstance();
+            for (String arg : args) {
+                Object o = Class.forName(arg).newInstance();
                 // To print out objects created for test - can be removed //
                 System.out.println("Object created for class:"
                         + o.getClass().getName());
